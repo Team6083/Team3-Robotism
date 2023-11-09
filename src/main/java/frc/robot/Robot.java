@@ -5,6 +5,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -17,6 +19,9 @@ public class Robot extends TimedRobot {
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
+  VictorSP L = new VictorSP(5);
+  VictorSP R = new VictorSP(4);
+  XboxController xbox = new XboxController( 0 );
   @Override
   public void robotInit() {}
 
@@ -33,7 +38,10 @@ public class Robot extends TimedRobot {
   public void teleopInit() {}
 
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    L.set(xbox.getRawAxis(1)*0.2);
+    R.set(xbox.getRawAxis(5)*0.2);
+  }
 
   @Override
   public void disabledInit() {}
