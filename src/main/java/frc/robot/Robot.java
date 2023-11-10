@@ -41,6 +41,7 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     L.set(xbox.getRawAxis(1)*0.2);
     R.set(xbox.getRawAxis(5)*0.2);
+    Base.move();
   }
 
   @Override
