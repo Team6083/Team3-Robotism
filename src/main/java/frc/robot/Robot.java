@@ -19,9 +19,6 @@ public class Robot extends TimedRobot {
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
-  VictorSP L = new VictorSP(5);
-  VictorSP R = new VictorSP(4);
-  XboxController xbox = new XboxController( 0 );
   @Override
   public void robotInit() {}
 
@@ -39,8 +36,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    L.set(xbox.getRawAxis(1)*0.2);
-    R.set(xbox.getRawAxis(5)*0.2);
     Base.move();
   }
 
