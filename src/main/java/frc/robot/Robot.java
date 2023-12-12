@@ -35,12 +35,12 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Base.move();
-    if(Base.joy.getTrigger()==true){
+    if(Base.joy.getRawButton(6)==true){//RB
       Intake.take();
     }
-    if(Base.joy.getRawButton(4)==true){
+    if(Base.joy.getRawButton(4)==true){//Y鍵
       Intake.forward();
-    }else if(Base.joy.getRawButton(1)==true){
+    }else if(Base.joy.getRawButton(1)==true){//A鍵
       Intake.backward();
     }
   }
