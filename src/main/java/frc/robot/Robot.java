@@ -42,6 +42,8 @@ public class Robot extends TimedRobot {
       Intake.forward();
     }else if(Base.joy.getRawButton(1)==true){//A鍵
       Intake.backward();
+    }else if(Base.joy.getRawButton(5)==true){//LB
+      Shooter.Shoot();
     }
   }
 
