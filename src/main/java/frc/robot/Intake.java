@@ -10,11 +10,11 @@ public class Intake {
         wheels.set(0.6);
     }
 
-    public static void forward(){//放下intake
+    public static void forward(){//intake down
         intake.set(0.2);
     }
     
-    public static void backward(){//收起intake
+    public static void backward(){//intake up
         intake.set(-0.2);
     }
 }

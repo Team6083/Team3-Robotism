@@ -1,5 +1,7 @@
 package frc.robot;
 
+import com.kauailabs.navx.frc.AHRS;
+
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.Timer;
@@ -11,7 +13,7 @@ public class AutoRoad {
     public static final String Auto = "Auto";
     public static  String m_autoSelected;
     public static Encoder enc = new Encoder(0, 1);
-    AHRS gyro = new AHRS(SPI.Port.kMXP);
+    public static AHRS gyro = new AHRS(SPI.Port.kMXP);
 
     public static Timer timer = new Timer();
 
