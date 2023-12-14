@@ -59,7 +59,7 @@ public class AutoRoad {
         enc.reset();
         if(gyro.getAngle()<90){
             Base.R.set(0.3);
-            Base.R.set(-0.3);
+            Base.L.set(-0.3);
         }
         while(enc.get()<11500){
             Base.R.set(0.7);
