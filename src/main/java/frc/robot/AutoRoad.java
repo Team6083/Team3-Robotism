@@ -43,6 +43,7 @@ public class AutoRoad {
                 break;
             case Default:
                 Default();
+                break;
         }
     }
 
