@@ -47,6 +47,9 @@ public class AutoRoad {
             case Default:
                 Default();
                 break;
+            case AutoTimer:
+                AutoTimer();
+                break;
         }
     }
 
