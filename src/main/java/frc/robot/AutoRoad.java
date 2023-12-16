@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class AutoRoad {
     public static SendableChooser<String> m_chooser;
     public static final String Auto = "Auto";
+    public static final String AutoTimer = "AutoTimer";
     public static final String Default = "Default";
     public static  String m_autoSelected;
     public static Encoder enc = new Encoder(0, 1);
@@ -22,19 +23,21 @@ public class AutoRoad {
     public static void init() {
         m_chooser = new SendableChooser<String>();
         chooser_setting();
+        timer.reset();
     }
 
     public static void chooser_setting() {
         m_chooser.setDefaultOption("Default", Default);
         m_chooser.addOption("Auto", Auto);
+        m_chooser.addOption("AutoTimer",AutoTimer);
         SmartDashboard.putData("Auto Route", m_chooser);
     }
 
     /*public static void start() {
         m_autoSelected = m_chooser.getSelected();
         timer.start();
-    }
-    */
+    }*/
+
     
     public static void loop() {
         switch (m_autoSelected) {
@@ -66,5 +69,18 @@ public class AutoRoad {
             Base.R.set(0.7);
             Base.L.set(0.7);
         }
+    }
+
+    public static void AutoTimer(){
+        timer.start();
+        if(timer.get()<4){
+            Base.L.set(0.3);
+            Base.R.set(-0.3);
+        }
+        if(timer.get()<16){
+            Base.L.set(0.5);
+            Base.R.set(0.5);
+        }
+        //Timer自動，未確定秒數、馬達轉速、正逆轉
     }
 }
