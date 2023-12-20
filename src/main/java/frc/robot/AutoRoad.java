@@ -18,6 +18,7 @@ public class AutoRoad {
     public static Encoder encR = new Encoder(0,2);
     public static AHRS gyro = new AHRS(SPI.Port.kMXP);
     public static Timer timer = new Timer();
+    public static Encoder 
 
     
     public static void init() {
@@ -27,16 +28,16 @@ public class AutoRoad {
     }
 
     public static void chooser_setting() {
-        m_chooser.setDefaultOption("Default", Default);
+        m_chooser.setDefaultOption("Default", null);
         m_chooser.addOption("Auto", Auto);
         m_chooser.addOption("AutoTimer",AutoTimer);
         SmartDashboard.putData("Auto Route", m_chooser);
     }
 
-    /*public static void start() {
+    public static void start() {
         m_autoSelected = m_chooser.getSelected();
         timer.start();
-    }*/
+    }
 
     
     public static void loop() {
@@ -53,10 +54,6 @@ public class AutoRoad {
         }
     }
 
-    public static void Default(){
-        Base.R.set(0);
-        Base.L.set(0);
-    }
 
     public static void Auto(){
         while(encR.get()<7500&&encL.get()<7500){
