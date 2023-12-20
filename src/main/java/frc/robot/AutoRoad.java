@@ -18,7 +18,6 @@ public class AutoRoad {
     public static Encoder encR = new Encoder(0,2);
     public static AHRS gyro = new AHRS(SPI.Port.kMXP);
     public static Timer timer = new Timer();
-    public static Encoder 
 
     
     public static void init() {
@@ -46,7 +45,7 @@ public class AutoRoad {
                 Auto();
                 break;
             case Default:
-                Default();
+                
                 break;
             case AutoTimer:
                 AutoTimer();
