@@ -11,11 +11,11 @@ public class Gate {
     }
     
     
-    if(Base.joy.getRawbutton(0)==true){
+    public static void move(){if(Base.joy.getRawButton(0)==true){
         gate.set(0.5);//A
         gate.setAngle(90);
-    }if(Base.joy.getRawbutton(2)==true){
+    }if(Base.joy.getRawButton(2)==true){
         gate.set(0.5);//X
         gate.setAngle(0);
     }
-}
+}   }

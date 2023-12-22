@@ -50,6 +50,7 @@ public class Robot extends TimedRobot {
       Intake.backward();
     }else if(Base.joy.getRawButton(5)==true){//LB
       Shooter.Shoot();
+      Gate.move();
     }
   }
 
