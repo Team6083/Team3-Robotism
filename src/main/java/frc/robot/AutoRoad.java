@@ -99,11 +99,11 @@ public class AutoRoad {
 
     public static void AutoTimer() {
         timer.start();
-        if (timer.get() < 4) {
+        if (timer.get() < 2) {
             Base.L.set(0.3);
             Base.R.set(-0.3);
         }
-        if (timer.get() < 16) {
+        if (timer.get() < 9) {
             Base.L.set(0.5);
             Base.R.set(0.5);
         }
