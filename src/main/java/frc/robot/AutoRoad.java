@@ -94,9 +94,8 @@ public class AutoRoad {
 
             default:
                 break;
-            }
         }
-
+    }
 
     public static void AutoTimer() {
         timer.start();
@@ -111,4 +110,3 @@ public class AutoRoad {
         // Timer自動，未確定秒數、馬達轉速、正逆轉
     }
 }
-
