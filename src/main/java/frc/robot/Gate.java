@@ -14,8 +14,8 @@ public class Gate {
     }
 
     public static void move() {
-        if (Base.joy.getRawButton(0) == true) {
-            gateL.set(0.5);// A
+        if (Base.joy.getRawButton(1) == true) {
+            gateL.set(0.5);// B
             gateL.setAngle(90);
             gateR.set(0.5);
             gateR.setAngle(90);

@@ -10,7 +10,9 @@ public class Base {
     public static WPI_VictorSPX R = new WPI_VictorSPX(0);
     public static WPI_VictorSPX L = new WPI_VictorSPX(9);
     public static Joystick joy = new Joystick(0);
-
+    public static void init(){
+        R.setInverted(true);
+    }
     public static void move() {
         L.set(joy.getRawAxis(1) * 0.4);
         R.set(joy.getRawAxis(5) * 0.4);

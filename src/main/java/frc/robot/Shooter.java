@@ -9,4 +9,8 @@ public class Shooter {
         shoot.set(0.7);
     }
 
+    public static void shootneg(){
+        shoot.set(-0.7);
+    }
+
 }

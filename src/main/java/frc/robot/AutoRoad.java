@@ -103,6 +103,7 @@ public class AutoRoad {
             Base.L.set(0.3);
             Base.R.set(-0.3);
         }
+        timer.reset();
         if (timer.get() < 9) {
             Base.L.set(0.5);
             Base.R.set(0.5);
