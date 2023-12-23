@@ -33,10 +33,10 @@ public class AutoRoad {
         SmartDashboard.putData("Auto Route", m_chooser);
     }
 
-    /*public static void start() {
+    public static void start() {
         m_autoSelected = m_chooser.getSelected();
         timer.start();
-    }*/
+    }
 
     
     public static void loop() {
@@ -61,7 +61,7 @@ public class AutoRoad {
             Base.L.set(0.7);
         }
         enc.reset();
-        if(gyro.getAngle()<90){
+        if(gyro.getPitch()<90){
             Base.R.set(0.3);
             Base.L.set(-0.3);
         }
