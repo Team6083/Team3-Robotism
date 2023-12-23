@@ -14,9 +14,9 @@ public class AutoRoad {
     public static final String AutoTimer = "AutoTimer";
     public static final String Default = "Default";
     public static  String m_autoSelected;
-    public static Encoder enc = new Encoder(0, 1);
+    public static Encoder encL = new Encoder(0, 1);
+    public static Encoder encR = new Encoder(0,2);
     public static AHRS gyro = new AHRS(SPI.Port.kMXP);
-
     public static Timer timer = new Timer();
 
     
@@ -27,7 +27,7 @@ public class AutoRoad {
     }
 
     public static void chooser_setting() {
-        m_chooser.setDefaultOption("Default", Default);
+        m_chooser.setDefaultOption("Default", null);
         m_chooser.addOption("Auto", Auto);
         m_chooser.addOption("AutoTimer",AutoTimer);
         SmartDashboard.putData("Auto Route", m_chooser);
@@ -45,27 +45,27 @@ public class AutoRoad {
                 Auto();
                 break;
             case Default:
-                Default();
+                
+                break;
+            case AutoTimer:
+                AutoTimer();
                 break;
         }
     }
 
-    public static void Default(){
-        Base.R.set(0);
-        Base.L.set(0);
-    }
 
     public static void Auto(){
-        while(enc.get()<7500){
+        while(encR.get()<7500&&encL.get()<7500){
             Base.R.set(0.7);
             Base.L.set(0.7);
         }
-        enc.reset();
-        if(gyro.getPitch()<90){
+        encL.reset();
+        encR.reset();
+        if(gyro.getAngle()<90){
             Base.R.set(0.3);
             Base.L.set(-0.3);
         }
-        while(enc.get()<11500){
+        while(encR.get()<11500&&encL.get()<11500){
             Base.R.set(0.7);
             Base.L.set(0.7);
         }
