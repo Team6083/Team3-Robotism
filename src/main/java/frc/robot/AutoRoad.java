@@ -46,7 +46,7 @@ public class AutoRoad {
                 Auto();
                 break;
             case Default:
-
+                Default();
                 break;
             case AutoTimer:
                 AutoTimer();
@@ -108,5 +108,10 @@ public class AutoRoad {
             Base.R.set(0.5);
         }
         // Timer自動，未確定秒數、馬達轉速、正逆轉
+    }
+
+    public static void Default() {
+        Base.R.set(0);
+        Base.L.set(0);
     }
 }
